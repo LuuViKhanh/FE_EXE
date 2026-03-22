@@ -245,6 +245,7 @@ const handleRoboflowUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
       const response = await fetch('/yolo-api/ai/detect', {
         method: 'POST',
         body: formData,
+        signal: AbortSignal.timeout(120000),
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
@@ -327,6 +328,14 @@ const handleRoboflowUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     finally { setIsScanning(false); }
   }, [drawDetections]);
 
+  const loopRef = useRef(false);
+
+  const detectLoop = useCallback(async () => {
+    if (!loopRef.current) return;
+    await captureAndDetect();
+    if (loopRef.current) intervalRef.current = setTimeout(detectLoop, 1500) as any;
+  }, [captureAndDetect]);
+
   const startCamera = async () => {
     setRealtimeError(null);
     setRealtimeLoading(true);
@@ -335,7 +344,8 @@ const handleRoboflowUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
       streamRef.current = stream;
       if (videoRef.current) videoRef.current.srcObject = stream;
       setCameraActive(true);
-      intervalRef.current = setInterval(captureAndDetect, 1500);
+      loopRef.current = true;
+      detectLoop();
     } catch (err: any) {
       setRealtimeError(err.message ?? "Không thể truy cập camera");
     } finally {
@@ -344,7 +354,8 @@ const handleRoboflowUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
   };
 
   const stopCamera = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
+    loopRef.current = false;
+    if (intervalRef.current) clearTimeout(intervalRef.current as any);
     streamRef.current?.getTracks().forEach((t) => t.stop());
     streamRef.current = null;
     setCameraActive(false);
