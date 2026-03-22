@@ -245,7 +245,6 @@ const handleRoboflowUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
       const response = await fetch('/yolo-api/ai/detect', {
         method: 'POST',
         body: formData,
-        signal: AbortSignal.timeout(120000),
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
@@ -322,8 +321,8 @@ const handleRoboflowUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         confidence: d.confidence,
         bbox: d.bbox ?? [],
       }));
-      setRealtimeDetections(dets);
-      drawDetections(dets);
+      setRealtimeDetections(dets.length > 0 ? dets : prev => prev);
+      if (dets.length > 0) drawDetections(dets);
     } catch { /* silent */ }
     finally { setIsScanning(false); }
   }, [drawDetections]);
