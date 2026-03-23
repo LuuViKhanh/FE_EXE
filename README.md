@@ -1,7 +1,8 @@
 
   # Modern AI Monitoring System
-
+  
   This is a code bundle for Modern AI Monitoring System. The original project is available at https://www.figma.com/make/qT0FSoWjHG95OhgrKSlTXp/Modern-AI-Monitoring-System?fullscreen=1&t=awtOFJViRRwjidSS-1&preview-route=%2Flogin
+  LangAI is a brand name and MyLongAI is a project name
   ## Clone project
   1. Create folder name 
   2. Access git bash and cd to the folder you just created (ex: If you put file in c: or d: you have to cd/c/folder name or cd/d/folder name )
