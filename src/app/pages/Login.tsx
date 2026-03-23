@@ -227,11 +227,6 @@ export default function Login() {
             </Tabs>
           </CardContent>
         </Card>
-
-       
-        
-
-        
         <p className="text-center text-sm text-slate-500 mt-6">
           From Experience to{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-400">
