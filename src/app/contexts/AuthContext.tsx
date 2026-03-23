@@ -4,7 +4,7 @@ interface User {
   id: string;
   email: string;
   name: string;
-  role: 'producer'; // chủ hộ sản xuất
+  role: 'admin' | 'customer' | 'producer'; // admin, customer (chủ hộ sản xuất), or producer
 }
 
 interface AuthContextType {
@@ -33,22 +33,70 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (email: string, password: string) => {
     setIsLoading(true);
-    
+
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 800));
-      
-      // Mock login - in real app, this would validate against backend
+
+      // Mock users database
+      const mockUsers = [
+        {
+          id: 'admin-001',
+          email: 'admin@mylongai.com',
+          password: 'admin123',
+          name: 'Admin System',
+          role: 'admin' as const
+        },
+        {
+          id: 'admin-002',
+          email: 'admin@example.com',
+          password: 'admin',
+          name: 'Quản trị viên',
+          role: 'admin' as const
+        },
+        {
+          id: 'customer-001',
+          email: 'customer@mylongai.com',
+          password: 'customer123',
+          name: 'Nguyễn Văn A',
+          role: 'customer' as const
+        },
+        {
+          id: 'customer-002',
+          email: 'producer@example.com',
+          password: 'producer',
+          name: 'Chủ hộ sản xuất',
+          role: 'customer' as const
+        },
+        {
+          id: 'customer-003',
+          email: 'user@example.com',
+          password: 'user123',
+          name: 'Người dùng',
+          role: 'customer' as const
+        }
+      ];
+
+      // Find user by email and password
+      const foundUser = mockUsers.find(
+        u => u.email === email && u.password === password
+      );
+
+      if (!foundUser) {
+        throw new Error('Invalid email or password');
+      }
+
+      // Create user object without password
       const mockUser: User = {
-        id: '1',
-        email,
-        name: email.split('@')[0],
-        role: 'producer'
+        id: foundUser.id,
+        email: foundUser.email,
+        name: foundUser.name,
+        role: foundUser.role
       };
-      
+
       // Save to localStorage first
       localStorage.setItem('mylongai_user', JSON.stringify(mockUser));
-      
+
       // Then update state - this will trigger re-render
       setUser(mockUser);
     } finally {
@@ -58,22 +106,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const register = async (email: string, password: string, name: string) => {
     setIsLoading(true);
-    
+
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Mock registration
+
+      // Mock registration - new users are customers by default
       const mockUser: User = {
         id: Date.now().toString(),
         email,
         name,
-        role: 'producer'
+        role: 'customer'
       };
-      
+
       // Save to localStorage first
       localStorage.setItem('mylongai_user', JSON.stringify(mockUser));
-      
+
       // Then update state - this will trigger re-render
       setUser(mockUser);
     } finally {

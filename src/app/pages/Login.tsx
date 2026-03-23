@@ -11,21 +11,26 @@ import { toast } from 'sonner';
 
 export default function Login() {
   const navigate = useNavigate();
-  const { login, register, isLoading, isAuthenticated } = useAuth();
-  
+  const { login, register, isLoading, isAuthenticated, user } = useAuth();
+
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-  
+
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
   const [registerName, setRegisterName] = useState('');
 
-  // Navigate to dashboard when user is authenticated
+  // Navigate based on user role when authenticated
   useEffect(() => {
-    if (isAuthenticated) {
-      navigate('/dashboard', { replace: true });
+    if (isAuthenticated && user) {
+      if (user.role === 'admin') {
+        navigate('/admin', { replace: true });
+      } else {
+        // customer or producer role goes to dashboard (homepage)
+        navigate('/dashboard', { replace: true });
+      }
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, user, navigate]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,7 +39,7 @@ export default function Login() {
       toast.success('Đăng nhập thành công');
       // Navigation is handled by useEffect
     } catch (error) {
-      toast.error('Đăng nhập thất bại');
+      toast.error('Email hoặc mật khẩu không đúng');
     }
   };
 
@@ -220,6 +225,37 @@ export default function Login() {
                 </form>
               </TabsContent>
             </Tabs>
+          </CardContent>
+        </Card>
+
+        {/* Demo Accounts */}
+        <Card className="mt-6 border border-slate-700 bg-slate-800/50 backdrop-blur-xl rounded-2xl">
+          <CardContent className="pt-6">
+            <div className="text-center mb-3">
+              <p className="text-sm font-bold text-sky-400">Demo Accounts</p>
+            </div>
+            <div className="space-y-2 text-xs text-slate-400">
+              <div className="flex justify-between items-center p-2 bg-slate-900/50 rounded-lg">
+                <div>
+                  <p className="text-sky-400 font-bold">Admin:</p>
+                  <p>admin@mylongai.com</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-slate-500">Password:</p>
+                  <p className="text-white font-mono">admin123</p>
+                </div>
+              </div>
+              <div className="flex justify-between items-center p-2 bg-slate-900/50 rounded-lg">
+                <div>
+                  <p className="text-cyan-400 font-bold">Customer:</p>
+                  <p>customer@mylongai.com</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-slate-500">Password:</p>
+                  <p className="text-white font-mono">customer123</p>
+                </div>
+              </div>
+            </div>
           </CardContent>
         </Card>
 

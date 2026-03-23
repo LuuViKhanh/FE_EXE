@@ -9,6 +9,15 @@ import History from './pages/History';
 import CameraMonitoring from './pages/CameraMonitoring';
 import Weather from './pages/Weather';
 import VoiceAlerts from './pages/VoiceAlerts';
+import AdminLayout from './pages/admin/AdminLayout';
+import AdminOverview from './pages/admin/AdminOverview';
+import BatchManagement from './pages/admin/BatchManagement';
+import AdminCameraMonitoring from './pages/admin/CameraMonitoring';
+import RiskManagement from './pages/admin/RiskManagement';
+import Revenue from './pages/admin/Revenue';
+import Analytics from './pages/admin/Analytics';
+import UserManagement from './pages/admin/UserManagement';
+import Settings from './pages/admin/Settings';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +58,44 @@ const router = createBrowserRouter([
           {
             path: 'history',
             element: <History />,
+          },
+        ],
+      },
+      {
+        path: '/admin',
+        element: <AdminLayout />,
+        children: [
+          {
+            index: true,
+            element: <AdminOverview />,
+          },
+          {
+            path: 'batches',
+            element: <BatchManagement />,
+          },
+          {
+            path: 'cameras',
+            element: <AdminCameraMonitoring />,
+          },
+          {
+            path: 'risks',
+            element: <RiskManagement />,
+          },
+          {
+            path: 'revenue',
+            element: <Revenue />,
+          },
+          {
+            path: 'analytics',
+            element: <Analytics />,
+          },
+          {
+            path: 'users',
+            element: <UserManagement />,
+          },
+          {
+            path: 'settings',
+            element: <Settings />,
           },
         ],
       },
