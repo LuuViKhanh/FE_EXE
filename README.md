@@ -18,5 +18,10 @@
   * Customers are directed to the BatchGuard Overview for real-time monitoring.
   ### Administrator
    * Dashboard: A birds-eye view of real-time metrics and system health.
-   * Batch Management
+   * Batch Management: Full control over production batches, tracking, and logs.
+   * Camera Monitoring: Live surveillance and AI-driven visual tracking of the facility.
+   * Alerts & Risks: Oversight of all active threats (the chance it is going to rain) and resolution efficiency statistics.
+   * Revenue: Financial oversight, including sales reports and profit margins.
+   * User Management: Create, edit, or delete accounts and manage staff permissions.
+   System Settings:The System Settings module provides Administrators with granular control over AI thresholds, environmental safety limits, and data management.
   
