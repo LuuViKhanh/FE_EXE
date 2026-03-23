@@ -1,7 +1,7 @@
 
   # Modern AI Monitoring System
 
-  This is a code bundle for Modern AI Monitoring System. The original project is available at https://www.figma.com/design/qT0FSoWjHG95OhgrKSlTXp/Modern-AI-Monitoring-System.
+  This is a code bundle for Modern AI Monitoring System. The original project is available at https://www.figma.com/make/qT0FSoWjHG95OhgrKSlTXp/Modern-AI-Monitoring-System?fullscreen=1&t=awtOFJViRRwjidSS-1&preview-route=%2Flogin
 
   ## Running the code
 
