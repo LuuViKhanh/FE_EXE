@@ -24,4 +24,10 @@
    * Revenue: Financial oversight, including sales reports and profit margins.
    * User Management: Create, edit, or delete accounts and manage staff permissions.
    System Settings:The System Settings module provides Administrators with granular control over AI thresholds, environmental safety limits, and data management.
+ ### Customer
+   * Dashboard Overview: Track active batches, progress percentages, and estimated completion times.
+   * Live Camera: Real-time visual monitoring of the drying yards.
+   * Weather Integration: Live local weather data to anticipate production impacts.
+   * Voice Notifications: Configure audio alerts for critical production milestones.
+   * History: Access logs of recently completed batches.
   
