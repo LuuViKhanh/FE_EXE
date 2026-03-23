@@ -5,15 +5,15 @@
   ## Clone project
   1. Create folder name 
   2. Access git bash and cd to the folder you just created (ex: If you put file in c: or d: you have to cd/c/folder name or cd/d/folder name )
-  3. git clone https://github.com/LuuViKhanh/FE_EXE.git
+  3. git clone https://github.com/LuuViKhanh/FE_EXE.git (Copy this line to see our project)
 
   ## Running the code
-
+  After clone the project you have to turn terminal or powershell and run these below:
   Run `npm i` to install the dependencies.
 
   Run `npm run dev` to start the development server.
 
-  The server will run on http://localhost:5173
+  The server will run on http://localhost:5173 (copy this url)
 
   ## MYLONGAI: BatchGuard System Documentation
   ### Login & Access
