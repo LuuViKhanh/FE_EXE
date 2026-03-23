@@ -2,12 +2,18 @@
   # Modern AI Monitoring System
 
   This is a code bundle for Modern AI Monitoring System. The original project is available at https://www.figma.com/make/qT0FSoWjHG95OhgrKSlTXp/Modern-AI-Monitoring-System?fullscreen=1&t=awtOFJViRRwjidSS-1&preview-route=%2Flogin
+  ## Clone project
+  1. Create folder <name>
+  2. Access git bash and cd <name> (ex: If you put file in c: or d: you have to cd/c/folder name or cd/d/folder name )
+  3 git clone <repo-url>
 
   ## Running the code
 
   Run `npm i` to install the dependencies.
 
   Run `npm run dev` to start the development server.
+
+  The server will run on http://localhost:5173
 
   ## MYLONGAI: BatchGuard System Documentation
   ### Login & Access
