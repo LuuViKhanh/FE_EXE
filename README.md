@@ -3,8 +3,8 @@
 
   This is a code bundle for Modern AI Monitoring System. The original project is available at https://www.figma.com/make/qT0FSoWjHG95OhgrKSlTXp/Modern-AI-Monitoring-System?fullscreen=1&t=awtOFJViRRwjidSS-1&preview-route=%2Flogin
   ## Clone project
-  1. Create folder <name>
-  2. Access git bash and cd <name> (ex: If you put file in c: or d: you have to cd/c/folder name or cd/d/folder name )
+  1. Create folder name 
+  2. Access git bash and cd to the folder you just created (ex: If you put file in c: or d: you have to cd/c/folder name or cd/d/folder name )
   3. git clone https://github.com/LuuViKhanh/FE_EXE.git
 
   ## Running the code
