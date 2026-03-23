@@ -1,18 +1,26 @@
 
   # Modern AI Monitoring System
-
+  
   This is a code bundle for Modern AI Monitoring System. The original project is available at https://www.figma.com/make/qT0FSoWjHG95OhgrKSlTXp/Modern-AI-Monitoring-System?fullscreen=1&t=awtOFJViRRwjidSS-1&preview-route=%2Flogin
+  LangAI is a brand name and MyLongAI is a project name
   ## Clone project
   1. Create folder name 
   2. Access git bash and cd to the folder you just created (ex: If you put file in c: or d: you have to cd/c/folder name or cd/d/folder name )
   3. git clone https://github.com/LuuViKhanh/FE_EXE.git (Copy this line to see our project)
+  ## Prerequisites
+  Before running the project, you need to install:
 
+  Node.js (v18 or higher recommended)
+
+  npm (bundled with Node.js)
+  
+ Verify the installation using the following commands: `node -v ` `npm -v `
   ## Running the code
   After clone the project you have to turn terminal or powershell and run these below:
   Run `npm i` to install the dependencies.
 
   Run `npm run dev` to start the development server.
-
+ 
   The server will run on http://localhost:5173 (copy this url)
 
   ## MYLONGAI: BatchGuard System Documentation
