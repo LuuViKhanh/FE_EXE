@@ -29,7 +29,7 @@
    * Alerts & Risks: Oversight of all active threats (the chance it is going to rain) and resolution efficiency statistics.
    * Revenue: Financial oversight, including sales reports and profit margins.
    * User Management: Create, edit, or delete accounts and manage staff permissions.
-   System Settings:The System Settings module provides Administrators with granular control over AI thresholds, environmental safety limits, and data management.
+   * System Settings:The System Settings module provides Administrators with granular control over AI thresholds, environmental safety limits
  ### Customer
    * Dashboard Overview: Track active batches, progress percentages, and estimated completion times.
    * Live Camera: Real-time visual monitoring of the drying yards.
