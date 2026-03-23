@@ -14,9 +14,7 @@
 
   npm (bundled with Node.js)
   
- Verify the installation using the following commands:
-  node -v
-  npm -v
+ Verify the installation using the following commands: `node -v ` `npm -v `
   ## Running the code
   After clone the project you have to turn terminal or powershell and run these below:
   Run `npm i` to install the dependencies.
