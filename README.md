@@ -20,8 +20,8 @@
   1. URL: Navigate to the portal at https://[your-domain]/login
   2. Credentials: Log in with your authorized Email and Password.
   3. Role Redirection:
-  * Admins are directed to the Admin Dashboard for management. 
-  * Customers are directed to the BatchGuard Overview for real-time monitoring.
+  * Admins are directed to the Admin Dashboard for management. (to access admin dashboard, Email:admin@mylongai.com, Password:admin123).
+  * Customers are directed to the BatchGuard Overview for real-time monitoring. (to access Customer dashboard, Email:customer@mylongai.com, Password:customer123)
   ### Administrator
    * Dashboard: A birds-eye view of real-time metrics and system health.
    * Batch Management: Full control over production batches, tracking, and logs.
