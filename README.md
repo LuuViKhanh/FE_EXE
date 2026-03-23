@@ -5,7 +5,7 @@
   ## Clone project
   1. Create folder <name>
   2. Access git bash and cd <name> (ex: If you put file in c: or d: you have to cd/c/folder name or cd/d/folder name )
-  3. git clone [repo-url](https://github.com/LuuViKhanh/FE_EXE.git)
+  3. git clone https://github.com/LuuViKhanh/FE_EXE.git
 
   ## Running the code
 
